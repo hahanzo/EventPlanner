@@ -1,11 +1,16 @@
 package com.example.eventplanner.fragment
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityCompat.recreate
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventplanner.adapters.EventAdapter
@@ -19,7 +24,6 @@ class EventListFragment : Fragment() {
 
     private var _binding: FragmentEventListBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var eventAdapter: EventAdapter
 
     override fun onCreateView(
@@ -80,6 +84,20 @@ class EventListFragment : Fragment() {
         binding.openCalendarButton.setOnClickListener {
             val action = EventListFragmentDirections.actionEventListFragmentToCalendarFragment()
             findNavController().navigate(action)
+        }
+        binding.themeToggleButton.setOnClickListener {
+            toggleTheme()
+        }
+    }
+
+    private fun toggleTheme() {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            AppCompatDelegate.MODE_NIGHT_YES -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            AppCompatDelegate.MODE_NIGHT_NO, AppCompatDelegate.MODE_NIGHT_UNSPECIFIED -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
         }
     }
 

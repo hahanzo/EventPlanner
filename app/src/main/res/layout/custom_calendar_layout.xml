@@ -41,16 +41,17 @@
         android:paddingEnd="4dp"
         android:paddingTop="4dp"
         android:paddingBottom="4dp">
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ПН"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ВТ"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="СР"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ЧТ"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ПТ"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="СБ"/>
-        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="НД"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ПН"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ВТ"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="СР"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ЧТ"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="ПТ"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="СБ"/>
+        <TextView style="@style/CalendarWeekDayText" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="НД"/>
     </LinearLayout>
 
     <GridView
+        style="@style/CustomGridViewStyle"
         android:id="@+id/calendarGridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

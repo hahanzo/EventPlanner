@@ -59,7 +59,6 @@ class CalendarAdapter(
         viewHolder.dayTextView.text = dayOfMonth.toString()
 
         if (displayMonth == currentMonth && displayYear == currentYear) {
-            viewHolder.dayTextView.setTextColor(Color.BLACK)
             viewHolder.dayTextView.setTypeface(null, Typeface.NORMAL)
         } else {
             viewHolder.dayTextView.setTextColor(Color.LTGRAY)
