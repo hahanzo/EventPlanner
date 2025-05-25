@@ -9,5 +9,34 @@
         android:id="@+id/eventListFragment"
         android:name="com.example.eventplanner.fragment.EventListFragment"
         android:label="fragment_event_list"
-        tools:layout="@layout/fragment_event_list" />
+        tools:layout="@layout/fragment_event_list" >
+        <action
+            android:id="@+id/action_eventListFragment_to_eventEditFragment"
+            app:destination="@id/eventEditFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventEditFragment"
+        android:name="com.example.eventplanner.fragment.EventEditFragment"
+        android:label="fragment_event_edit"
+        tools:layout="@layout/fragment_event_edit">
+
+        <argument
+            android:name="eventId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Додати Подію" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.eventplanner.fragment.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
 </navigation>

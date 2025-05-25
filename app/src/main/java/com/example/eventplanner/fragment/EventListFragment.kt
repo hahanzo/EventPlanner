@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.eventplanner.EventAdapter
+import com.example.eventplanner.adapters.EventAdapter
 import com.example.eventplanner.R
 import com.example.eventplanner.data.Event
 import com.example.eventplanner.data.EventRepository
@@ -41,8 +43,20 @@ class EventListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        eventAdapter = EventAdapter { event ->
-        }
+        eventAdapter = EventAdapter (
+            onEditClick = { event ->
+                val action = EventListFragmentDirections.actionEventListFragmentToEventEditFragment(
+                    eventId = event.id,
+                    title = "Редагувати Подію"
+                )
+                findNavController().navigate(action)
+            },
+            onDeleteClick = { event ->
+                EventRepository.deleteEvent(event.id)
+                Toast.makeText(context, "Подію '${event.title}' видалено", Toast.LENGTH_SHORT).show()
+            }
+        )
+
         binding.eventsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = eventAdapter
@@ -57,12 +71,15 @@ class EventListFragment : Fragment() {
 
     private fun setupClickListeners() {
         binding.addEventButton.setOnClickListener {
-            val newEvent = Event(
-                title = "Нова подія ${System.currentTimeMillis() % 1000}",
-                date = System.currentTimeMillis() + (1000 * 60 * 60 * 24 * (1..7).random()), // Через 1-7 днів
-                description = "Це щойно додана подія."
+            val action = EventListFragmentDirections.actionEventListFragmentToEventEditFragment(
+                eventId = null,
+                title = "Додати Подію"
             )
-            EventRepository.addEvents(newEvent)
+            findNavController().navigate(action)
+        }
+        binding.openCalendarButton.setOnClickListener {
+            val action = EventListFragmentDirections.actionEventListFragmentToCalendarFragment()
+            findNavController().navigate(action)
         }
     }
 

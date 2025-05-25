@@ -9,24 +9,25 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
 
-    <color name="primaryColor">#6200EE</color>
+    <color name="primaryColor">#BB86FC</color>
     <color name="primaryDarkColor">#3700B3</color>
-    <color name="onPrimaryColor">#FFFFFF</color>
+    <color name="onPrimaryColor">#000000</color>
     <color name="secondaryColor">#03DAC5</color>
     <color name="onSecondaryColor">#000000</color>
-    <color name="backgroundColor">#F0F0F0</color>
-    <color name="surfaceColor">#FFFFFF</color>
-    <color name="onSurfaceColor">#212121</color>
-    <color name="textColorPrimary">#212121</color>
-    <color name="textColorSecondary">#757575</color>
-    <color name="textColorHint">#BDBDBD</color>
-    <color name="calendarDayTextOtherMonth">#AAAAAA</color>
-    <color name="calendarDotColor">#FF0000</color>
+    <color name="backgroundColor">#121212</color>
+    <color name="surfaceColor">#1D1D1D</color>
+    <color name="onSurfaceColor">#FFFFFF</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorSecondary">#BDBDBD</color>
+    <color name="textColorHint">#616161</color>
+    <color name="calendarDayTextOtherMonth">#616161</color>
+    <color name="calendarDotColor">#FF4081</color>
     <color name="calendarSelectedDayBackground">@color/primaryColor</color>
     <color name="calendarSelectedDayText">@color/onPrimaryColor</color>
 
     <color name="fabBackgroundColor">@color/primaryColor</color>
     <color name="fabContentColor">@color/onPrimaryColor</color>
+
     <color name="cardBackgroundColor">@color/surfaceColor</color>
     <color name="cardTextColorPrimary">@color/textColorPrimary</color>
     <color name="cardTextColorSecondary">@color/textColorSecondary</color>
